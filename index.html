@@ -6434,7 +6434,105 @@
     <script src="https://rblefvllucmohepcuatb.supabase.co/storage/v1/object/public/Wedding/js/wedding.js"
         type="text/javascript"></script>
     <script>
-
+        // Gallery Image Preloader
+        (function() {
+            // Array of gallery images to preload
+            const galleryImages = [
+                'g1.jpg', 'g2.jpg', 'g3.jpg', 'g4.jpg', 'g5.jpg', 'g6.jpg',
+                'g7.jpg', 'g8.jpg', 'g9.jpg', 'g10.jpg', 'g11.jpg', 'g12.jpg',
+                'g13.jpg', 'g14.jpg', 'g15.jpg', 'g16.jpg', 'g17.jpg', 'g18.jpg',
+                'g19.jpg', 'g20.jpg', 'g21.jpg', 'g22.jpg', 'g23.jpg'
+            ];
+            
+            const baseUrl = 'https://rblefvllucmohepcuatb.supabase.co/storage/v1/object/public/Wedding/images/';
+            let preloadedImages = [];
+            let preloadStarted = false;
+            
+            // Function to preload images
+            function preloadGalleryImages() {
+                if (preloadStarted) return;
+                preloadStarted = true;
+                
+                console.log('Starting gallery image preload...');
+                
+                galleryImages.forEach((imageName, index) => {
+                    setTimeout(() => {
+                        const img = new Image();
+                        img.onload = function() {
+                            console.log(`Preloaded: ${imageName}`);
+                        };
+                        img.onerror = function() {
+                            console.warn(`Failed to preload: ${imageName}`);
+                        };
+                        img.src = baseUrl + imageName;
+                        preloadedImages.push(img);
+                    }, index * 100); // Stagger loading by 100ms to avoid overwhelming the browser
+                });
+            }
+            
+            // Start preloading when user scrolls past the first section
+            let preloadTriggered = false;
+            function checkScrollForPreload() {
+                if (preloadTriggered) return;
+                
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                
+                // Start preloading after user scrolls 50% of viewport height
+                if (scrollTop > windowHeight * 0.5) {
+                    preloadTriggered = true;
+                    preloadGalleryImages();
+                    window.removeEventListener('scroll', checkScrollForPreload);
+                }
+            }
+            
+            // Also start preloading after 3 seconds if user hasn't scrolled
+            setTimeout(function() {
+                if (!preloadTriggered) {
+                    preloadTriggered = true;
+                    preloadGalleryImages();
+                }
+            }, 3000);
+            
+            // Add scroll listener
+            window.addEventListener('scroll', checkScrollForPreload, { passive: true });
+            
+            // Intersection Observer for more efficient tracking
+            if ('IntersectionObserver' in window) {
+                const galleryObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && entry.target.id === 'SECTION3') {
+                            // User reached section 3, start preloading if not already started
+                            if (!preloadTriggered) {
+                                preloadTriggered = true;
+                                preloadGalleryImages();
+                                galleryObserver.disconnect();
+                            }
+                        }
+                    });
+                }, {
+                    rootMargin: '200px' // Start preloading 200px before reaching the section
+                });
+                
+                // Observe section 3 (or any section before the gallery)
+                const section3 = document.getElementById('SECTION3');
+                if (section3) {
+                    galleryObserver.observe(section3);
+                }
+            }
+            
+            // Preload high-priority images immediately after page load
+            window.addEventListener('load', function() {
+                // Preload first 3 images immediately for instant gallery access
+                const priorityImages = galleryImages.slice(0, 3);
+                priorityImages.forEach(imageName => {
+                    const img = new Image();
+                    img.src = baseUrl + imageName;
+                    preloadedImages.push(img);
+                });
+            });
+            
+        })();
     </script>
     <script id="script_event_data" type="application/json">
             {
