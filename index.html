@@ -4343,6 +4343,100 @@
             height: 327.7px;
         }
 
+        #SECTION13 {
+            height: 300px;
+        }
+
+        #HEADLINE98 {
+            width: 350px;
+            top: 30px;
+            left: 35px;
+        }
+
+        #HEADLINE98>.ladi-headline {
+            font-family: "Great Vibes", cursive;
+            font-size: 27px;
+            line-height: 1.4;
+            color: rgb(82, 97, 62);
+            text-align: center;
+        }
+
+        #GROUP_QR {
+            width: 380px;
+            height: 200px;
+            top: 100px;
+            left: 20px;
+        }
+
+        #GROUP_GROOM_QR,
+        #GROUP_BRIDE_QR {
+            width: 160px;
+            height: 200px;
+        }
+
+        #GROUP_GROOM_QR {
+            top: 0px;
+            left: 0px;
+        }
+
+        #GROUP_BRIDE_QR {
+            top: 0px;
+            left: 220px;
+        }
+
+        #QR_GROOM,
+        #QR_BRIDE {
+            width: 140px;
+            height: 140px;
+            top: 0px;
+            left: 10px;
+        }
+
+        #QR_GROOM>.ladi-image>.ladi-image-background {
+            background-image: url("https://rblefvllucmohepcuatb.supabase.co/storage/v1/object/public/Wedding/resize/QR1.jpg");
+        }
+
+        #QR_BRIDE>.ladi-image>.ladi-image-background {
+            background-image: url("https://rblefvllucmohepcuatb.supabase.co/storage/v1/object/public/Wedding/resize/QR2.jpg");
+        }
+
+        .qr-code-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #f0f0f0;
+            border: 2px solid #52613e;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #52613e;
+            text-align: center;
+        }
+
+        .qr-code-placeholder:before {
+            content: "QR Code\AHere";
+            white-space: pre;
+        }
+
+        #HEADLINE_GROOM,
+        #HEADLINE_BRIDE {
+            width: 160px;
+            top: 150px;
+            left: 0px;
+        }
+
+        #HEADLINE_GROOM>.ladi-headline,
+        #HEADLINE_BRIDE>.ladi-headline {
+            font-family: TESQSSRUdVTEFSLlRURg;
+            font-size: 16px;
+            line-height: 1.4;
+            color: rgb(82, 97, 62);
+            text-align: center;
+            font-weight: bold;
+        }
+
         #BOX17 {
             width: 420px;
             height: 324px;
@@ -5810,6 +5904,44 @@
                 </div>
             </div>
         </div>
+        <div id="SECTION13" class='ladi-section'>
+            <div class='ladi-section-background'></div>
+            <div class="ladi-container">
+                <div id="HEADLINE98" class='ladi-element'>
+                    <h3 class='ladi-headline ladi-transition'>
+                        Gửi quà chúc mừng cô dâu, chú rể ở đây nhé!<br>
+                    </h3>
+                </div>
+                <div id="GROUP_QR" class='ladi-element'>
+                    <div class='ladi-group'>
+                        <div id="GROUP_GROOM_QR" class='ladi-element'>
+                            <div class='ladi-group'>
+                                <div id="QR_GROOM" class='ladi-element'>
+                                    <div class='ladi-image'>
+                                        <div class="ladi-image-background"></div>
+                                    </div>
+                                </div>
+                                <div id="HEADLINE_GROOM" class='ladi-element'>
+                                    <p class='ladi-headline ladi-transition'>Chú rể</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="GROUP_BRIDE_QR" class='ladi-element'>
+                            <div class='ladi-group'>
+                                <div id="QR_BRIDE" class='ladi-element'>
+                                    <div class='ladi-image'>
+                                        <div class="ladi-image-background"></div>
+                                    </div>
+                                </div>
+                                <div id="HEADLINE_BRIDE" class='ladi-element'>
+                                    <p class='ladi-headline ladi-transition'>Cô dâu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="SECTION_POPUP" class='ladi-section'>
             <div class='ladi-section-background'></div>
             <div class="ladi-container">
@@ -5965,7 +6097,7 @@
             ;
         window.lazyload_run(document, true, true);
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"
         type="text/css">
     <style type="text/css">
         @-webkit-keyframes rotateInDownLeft {
@@ -6790,12 +6922,14 @@
                         const container = document.getElementById('GROUP43');
                         const section = document.getElementById('SECTION11');
                         // Hide IMAGE41 and IMAGE42 instead of adjusting heights
+                        const image40 = document.getElementById('IMAGE40');
                         const image41 = document.getElementById('IMAGE41');
                         const image42 = document.getElementById('IMAGE42');
                         
-                        if (container && section) {
+                        if (container && section && image40) {
                             container.style.height = '100px';
                             section.style.height = '200px';
+                            image40.style.height = '525.7px';
                             if (image41) image41.style.display = 'none';
                             if (image42) image42.style.display = 'none';
                         }
