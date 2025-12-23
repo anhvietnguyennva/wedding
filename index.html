@@ -4758,7 +4758,7 @@
         .wdg-rsvp-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 12px;
         }
     
         .wdg-rsvp-field {
@@ -5860,6 +5860,14 @@
                             </select>
         
                             <input type="text" name="guests" class="wdg-rsvp-field" placeholder="Số lượng tham dự cùng?">
+
+                            <select name="side" class="wdg-rsvp-field" required>
+                                <option value="" disabled selected>Đăng ký xe</option>
+                                <option value="Đi cả 2 chiều (HN - TB)">Đi cả 2 chiều (HN - TB)</option>
+                                <option value="Đi 1 chiều (HN - TB)">Đi 1 chiều (HN - TB)</option>
+                                <option value="Đi 1 chiều (TB - HN)">Đi 1 chiều (TB - HN)</option>
+                                <option value="Di chuyển tự túc">Di chuyển tự túc</option>
+                            </select>
         
                             <button type="submit" id="wdg-rsvp-btn" class="wdg-rsvp-submit">GỬI LỜI NHẮN & XÁC
                                 NHẬN</button>
