@@ -71,16 +71,18 @@
         content="https://static.ladipage.net/6322a62f2dad980013bb5005/untitled-1-20250409032644-v_4bn.png" />
     <meta name="revisit-after" content="days" />
     <link rel="dns-prefetch">
+    <link rel="preconnect" href="https://rblefvllucmohepcuatb.supabase.co/" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="preconnect" href="https://w.ladicdn.com/" crossorigin>
     <link rel="preconnect" href="https://s.ladicdn.com/" crossorigin>
-    <link rel="preconnect" href="https://api1.ldpform.com/" crossorigin>
+    <!-- <link rel="preconnect" href="https://api1.ldpform.com/" crossorigin> -->
     <link rel="preconnect" href="https://a.ladipage.com/" crossorigin>
-    <link rel="preconnect" href="https://api.sales.ldpform.net/" crossorigin>
+    <!-- <link rel="preconnect" href="https://api.sales.ldpform.net/" crossorigin> -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" as="style"
         onload="this.onload = null; this.rel = 'stylesheet';">
-    <link rel="preload" href="https://w.ladicdn.com/v5/source/ladipagev3.min.js?v=1764917400427" as="script">
+    <!-- <link rel="preload" href="https://w.ladicdn.com/v5/source/ladipagev3.min.js?v=1764917400427" as="script"> -->
+    <link rel="preload" href="https://rblefvllucmohepcuatb.supabase.co/storage/v1/object/public/Wedding/js/wedding.js" as="script">
     <style id="style_ladi" type="text/css">
         a,
         abbr,
@@ -463,7 +465,7 @@
         }
 
         .ladi-transition {
-            transition: all 150ms linear 0s
+            transition: all 500ms linear 250ms
         }
 
         .z-index-1 {
@@ -483,19 +485,19 @@
         }
 
         .transition-parent-collapse-height {
-            transition: height 150ms linear 0s
+            transition: height 500ms linear 250ms
         }
 
         .transition-parent-collapse-top {
-            transition: top 150ms linear 0s
+            transition: top 500ms linear 250ms
         }
 
         .transition-readmore {
-            transition: height 350ms linear 0s
+            transition: height 500ms linear 250ms
         }
 
         .transition-collapse {
-            transition: height 150ms linear 0s
+            transition: height 500ms linear 250ms
         }
 
         body.grab {
@@ -772,7 +774,7 @@
             display: -webkit-inline-flex;
             display: inline-flex;
             left: 0;
-            transition: left 150ms ease-in-out;
+            transition: left 1000ms ease-in-out;
         }
 
         .ladi-box {
@@ -2242,6 +2244,7 @@
         #BOX11>.ladi-box:hover,
         #HEADLINE40>.ladi-headline:hover,
         #HEADLINE41>.ladi-headline:hover,
+        #HEADLINE3101>.ladi-headline:hover,
         #HEADLINE42>.ladi-headline:hover,
         #HEADLINE43>.ladi-headline:hover,
         #HEADLINE44>.ladi-headline:hover,
@@ -2840,7 +2843,7 @@
 
         #HEADLINE30 {
             width: 320px;
-            top: 200.918px;
+            top: 209.918px;
             left: 22px;
         }
 
@@ -3438,6 +3441,7 @@
         }
 
         #HEADLINE41,
+        #HEADLINE3101,
         #HEADLINE42,
         #HEADLINE43,
         #HEADLINE44,
@@ -3471,11 +3475,17 @@
         }
 
         #HEADLINE41 {
-            top: 121.505px;
-            left: 117.332px;
+            top: 272.505px;
+            left: 223.112px;
+        }
+
+        #HEADLINE3101 {
+            top: 272.505px;
+            left: 275.668px;
         }
 
         #HEADLINE41>.ladi-headline,
+        #HEADLINE3101>.ladi-headline,
         #HEADLINE42>.ladi-headline,
         #HEADLINE43>.ladi-headline,
         #HEADLINE44>.ladi-headline,
@@ -3724,8 +3734,8 @@
         }
 
         #IMAGE34 {
-            top: 222.53px;
-            left: 270.048px;
+            top: 153px;
+            left: 322px;
         }
 
         #IMAGE34>.ladi-image>.ladi-image-background {
@@ -3993,7 +4003,7 @@
 
         #GROUP35 {
             top: 405.9px;
-            left: 49.289px;
+            left: 29.289px;
         }
 
         #COUNTDOWN1>.ladi-countdown {
@@ -4697,6 +4707,90 @@
             background-image: none !important;
         }
     </style>
+    <style>
+        .wdg-rsvp-section {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            font-family: 'TESQSSRUdVTEFSLlRURg', 'Lora', serif;
+        }
+    
+        .wdg-rsvp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    
+        .wdg-rsvp-field {
+            width: 100%;
+            padding: 12px 18px;
+            border: 1px solid #52613e;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #52613e;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+        }
+    
+        .wdg-rsvp-textarea {
+            height: 85px;
+            border-radius: 15px;
+            resize: none;
+        }
+    
+        .wdg-rsvp-submit {
+            background-color: #52613e;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 5px;
+            transition: opacity 0.3s;
+        }
+    
+        .wdg-rsvp-submit:hover {
+            opacity: 0.8;
+        }
+    
+        #wdg-rsvp-msg {
+            display: none;
+            margin-top: 15px;
+            color: #52613e;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+    
+        /* Performance boost: disable heavy browser effects during scroll */
+        .ladi-image-background {
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* Refactor 1: Center the text block */
+        .wdg-rsvp-section h3 {
+            text-align: center;
+            margin-bottom: 25px; /* Added spacing to match image */
+        }
+
+        /* Refactor 2: Down arrow for select fields */
+        select.wdg-rsvp-field {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            /* Custom SVG triangle arrow */
+            background-image: url("data:image/svg+xml;utf8, %3Csvg%20width%3D%2232%22%20height%3D%2224%22%20viewBox%3D%220%200%2032%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpolygon%20points%3D%220%2C0%2032%2C0%2016%2C24%22%20style%3D%22fill%3A%20rgb(82%2C%2097%2C%2062)%22%3E%3C%2Fpolygon%3E%3C%2Fsvg%3E") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 20px center !important; /* Positioned slightly inward */
+            background-size: 9px 6px !important; /* Made smaller as requested */
+            padding-right: 40px !important;
+        }
+    </style>
     <!-- MUSIC + SVG TOGGLE (iOS & Desktop friendly) -->
     <style>
         #music-toggle {
@@ -4906,18 +5000,16 @@
         });
     </script>
     <!-- PROTECT_COPY_START -->
-    <script>
+    <!-- <script>
         window.oncontextmenu = function () {
             return false;
-        }
-            ;
+        };
         document.onkeydown = function (e) {
             if ((e.ctrlKey || e.metaKey) && e.which == 85) {
                 e.preventDefault();
                 return false;
             }
-        }
-            ;
+        };
     </script>
     <style>
         body {
@@ -4926,7 +5018,7 @@
             -ms-user-select: none;
             user-select: none;
         }
-    </style>
+    </style> -->
     <!-- PROTECT_COPY_END -->
 </head>
 
@@ -5003,7 +5095,7 @@
                                         </div>
                                         <div id="HEADLINE4" class='ladi-element'>
                                             <p class='ladi-headline'>
-                                                25.10.2025<br>
+                                                11.01.2026<br>
                                             </p>
                                         </div>
                                     </div>
@@ -5082,8 +5174,7 @@
                                 </div>
                                 <div id="HEADLINE7" class='ladi-element'>
                                     <p class='ladi-headline ladi-transition'>
-                                        Ông. Nguyễn Hùng Vương<br>
-                                        Bà. Trần Thị Bích Phương<br>
+                                        Bà. Nguyễn Thị Thơm<br>
                                     </p>
                                 </div>
                             </div>
@@ -5097,8 +5188,8 @@
                                 </div>
                                 <div id="HEADLINE9" class='ladi-element'>
                                     <p class='ladi-headline ladi-transition'>
-                                        Ông. Lưu Chí Hiếu<br>
-                                        Bà. Nguyễn Ngọc Ánh<br>
+                                        Ông. Vũ Hoàng Giang<br>
+                                        Bà. Trần Thị Ngọc Lan<br>
                                     </p>
                                 </div>
                             </div>
@@ -5133,13 +5224,12 @@
                 <div data-action="true" id="GROUP48" class='ladi-element'>
                     <div class='ladi-group'>
                         <div id="HEADLINE30" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>The Opera Wedding &amp;Convention center</p>
+                            <p class='ladi-headline ladi-transition'>Tư gia nhà trai</p>
                         </div>
                         <div id="HEADLINE31" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>&nbsp;Lô 18A Lê Hồng Phong, Kiêu Sơn, Hài An, Hải
-                                Phòng</p>
+                            <p class='ladi-headline ladi-transition'>&nbsp;xóm 2, thôn Vô Ngại, Tam Quang, Vũ Thư, Thái Bình</p>
                         </div>
-                        <a href="https://maps.app.goo.gl/doSwnXX7kwrr3CW58?g_st=ipc" target="_blank" id="GROUP21"
+                        <a href="https://maps.app.goo.gl/6aMDgAruk9eMfgeeA" target="_blank" id="GROUP21"
                             class='ladi-element'>
                             <div class='ladi-group'>
                                 <div id="HEADLINE32" class='ladi-element'>
@@ -5158,7 +5248,7 @@
                         <div id="GROUP22" class='ladi-element'>
                             <div class='ladi-group'>
                                 <div id="HEADLINE15" class='ladi-element'>
-                                    <p class='ladi-headline ladi-transition'>25</p>
+                                    <p class='ladi-headline ladi-transition'>11</p>
                                 </div>
                                 <div id="GROUP14" class='ladi-element'>
                                     <div class='ladi-group'>
@@ -5169,7 +5259,7 @@
                                         </div>
                                         <div id="HEADLINE16" class='ladi-element'>
                                             <p class='ladi-headline ladi-transition'>
-                                                tháng 10<br>
+                                                tháng 1<br>
                                             </p>
                                         </div>
                                         <div id="LINE2" class='ladi-element'>
@@ -5188,7 +5278,7 @@
                                         </div>
                                         <div id="HEADLINE17" class='ladi-element'>
                                             <p class='ladi-headline ladi-transition'>
-                                                năm 2025<br>
+                                                năm 2026<br>
                                             </p>
                                         </div>
                                         <div id="LINE4" class='ladi-element'>
@@ -5201,11 +5291,11 @@
                             </div>
                         </div>
                         <div id="HEADLINE14" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>17:30, thứ bảy</p>
+                            <p class='ladi-headline ladi-transition'>11:00, chủ nhật</p>
                         </div>
                         <div id="HEADLINE13" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
-                                ( Tức ngày 05 tháng 09 năm Ất Tỵ)<br>
+                                (Tức ngày 23 tháng 11 năm Ất Tỵ)<br>
                             </p>
                         </div>
                     </div>
@@ -5342,52 +5432,162 @@
                     <div class='ladi-group'>
                         <div id="HEADLINE40" class='ladi-element'>
                             <h3 class='ladi-headline ladi-transition'>
-                                October<br>
+                                January<br>
                             </h3>
                         </div>
-                        <div id="HEADLINE41" class='ladi-element'>
+                        <div id="HEADLINE76" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
                                 1<br>
                             </p>
                         </div>
                         <div id="HEADLINE42" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
+                                2<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE75" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
                                 3<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE77" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                4<br>
                             </p>
                         </div>
                         <div id="HEADLINE43" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
-                                6<br>
+                                5<br>
                             </p>
                         </div>
                         <div id="HEADLINE44" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
-                                7<br>
+                                6<br>
                             </p>
                         </div>
                         <div id="HEADLINE45" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                7<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE72" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
                                 8<br>
                             </p>
                         </div>
                         <div id="HEADLINE46" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
+                                9<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE73" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
                                 10<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE74" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                11<br>
                             </p>
                         </div>
                         <div id="HEADLINE47" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
-                                13<br>
+                                12<br>
                             </p>
                         </div>
                         <div id="HEADLINE48" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
-                                14<br>
+                                13<br>
                             </p>
                         </div>
                         <div id="HEADLINE49" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
+                                14<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE71" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
                                 15<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE64" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                16<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE65" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                17<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE66" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                18<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE67" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                19<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE68" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                20<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE69" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                21<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE70" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                22<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE57" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                23<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE58" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                24<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE59" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                25<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE60" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                26<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE61" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                27<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE62" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                28<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE63" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                29<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE41" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                30<br>
+                            </p>
+                        </div>
+                        <div id="HEADLINE3101" class='ladi-element'>
+                            <p class='ladi-headline ladi-transition'>
+                                31<br>
                             </p>
                         </div>
                         <div id="HEADLINE50" class='ladi-element'>
@@ -5423,111 +5623,7 @@
                                 sun<br>
                             </p>
                         </div>
-                        <div id="HEADLINE57" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                24<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE58" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                25<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE59" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                26<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE60" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                27<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE61" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                28<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE62" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                29<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE63" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                30<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE64" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                17<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE65" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                18<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE66" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                19<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE67" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                20<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE68" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                21<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE69" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                22<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE70" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                23<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE71" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                16<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE72" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                9<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE73" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                11<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE74" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                12<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE75" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                4<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE76" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                2<br>
-                            </p>
-                        </div>
-                        <div id="HEADLINE77" class='ladi-element'>
-                            <p class='ladi-headline ladi-transition'>
-                                5<br>
-                            </p>
-                        </div>
+                        
                         <div id="IMAGE34" class='ladi-element'>
                             <div class='ladi-image'>
                                 <div class="ladi-image-background"></div>
@@ -5562,7 +5658,7 @@
                         </div>
                         <div id="HEADLINE81" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
-                                17:30<br>Đón khách
+                                10:15<br>Đón khách
                             </p>
                         </div>
                     </div>
@@ -5576,7 +5672,7 @@
                         </div>
                         <div id="HEADLINE82" class='ladi-element'>
                             <p class='ladi-headline ladi-transition'>
-                                19:00<br>khai tiệc
+                                11:00<br>khai tiệc
                             </p>
                         </div>
                     </div>
@@ -5708,90 +5804,45 @@
             <div class='ladi-section-background'></div>
             <div class="ladi-container">
                 <div id="IMAGE40" class='ladi-element'>
-                    <div class='ladi-image ladi-transition'>
+                    <div class='ladi-image'>
                         <div class="ladi-image-background"></div>
                     </div>
                 </div>
-                <div id="GROUP43" class='ladi-element'>
-                    <div class='ladi-group'>
-                        <div id="HEADLINE89" class='ladi-element'>
-                            <h3 class='ladi-headline ladi-transition'>
-                                Hãy xác nhận sự có mặt của bạn để chúng mình<br>
-                                chuẩn bị đón tiếp một cách chu đáo nhất.<br>
-                                Trân trọng!&nbsp;<br>
-                            </h3>
-                        </div>
-                        <div id="FORM2" is_auto_funnel="" data-config-id="688c8e234ec38c0012915b8d"
-                            class='ladi-element'>
-                            <form autocomplete="off" method="post" class='ladi-form'>
-                                <div id="BUTTON2" class='ladi-element'>
-                                    <div class='ladi-button ladi-transition'>
-                                        <div class="ladi-button-background"></div>
-                                        <div id="BUTTON_TEXT2" class='ladi-element ladi-button-headline'>
-                                            <p class='ladi-headline ladi-transition'>GỬI LỜI NHẮN &amp;xác nhận</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="FORM_ITEM2" class='ladi-element'>
-                                    <div class="ladi-form-item-container">
-                                        <div class="ladi-form-item-background"></div>
-                                        <div class='ladi-form-item'>
-                                            <input autocomplete="off" tabindex="1" name="name" required
-                                                class="ladi-form-control" type="text" placeholder="Tên của bạn"
-                                                value="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="FORM_ITEM3" class='ladi-element'>
-                                    <div class="ladi-form-item-container">
-                                        <div class="ladi-form-item-background"></div>
-                                        <div class='ladi-form-item'>
-                                            <textarea autocomplete="off" tabindex="4" name="message"
-                                                class="ladi-form-control"
-                                                placeholder="Gửi lời nhắn đến cô dâu chú rể"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="FORM_ITEM4" class='ladi-element'>
-                                    <div class="ladi-form-item-container">
-                                        <div class="ladi-form-item-background"></div>
-                                        <div class='ladi-form-item'>
-                                            <select tabindex="3" name="form_item7"
-                                                class="ladi-form-control ladi-form-control-select" data-selected="">
-                                                <option value="">Bạn sẽ đến chứ?</option>
-                                                <option value="Tôi chắc chắn sẽ đến">Tôi chắc chắn sẽ đến</option>
-                                                <option value="Xin lỗi, Tôi bận rồi!">Xin lỗi, Tôi bận rồi!</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="FORM_ITEM5" class='ladi-element'>
-                                    <div class="ladi-form-item-container">
-                                        <div class="ladi-form-item-background"></div>
-                                        <div class='ladi-form-item'>
-                                            <select tabindex="5" name="form_item9"
-                                                class="ladi-form-control ladi-form-control-select" data-selected="">
-                                                <option value="">Bạn là khách mời của ai?</option>
-                                                <option value="Khách mời Cô Dâu">Khách mời Cô Dâu</option>
-                                                <option value="Khách mời Chú Rể">Khách mời Chú Rể</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="FORM_ITEM6" class='ladi-element'>
-                                    <div class="ladi-form-item-container">
-                                        <div class="ladi-form-item-background"></div>
-                                        <div class='ladi-form-item'>
-                                            <input autocomplete="off" tabindex="6" name="" class="ladi-form-control"
-                                                type="text" placeholder="Số lượng tham dự cùng?" value="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="submit" class="ladi-hidden"></button>
-                            </form>
-                        </div>
+        
+                <!-- The Form Block -->
+                <div id="GROUP43" class='ladi-element' style="top: 42px; left: 12px; width: 395px; height: 446px; z-index: 20;">
+                    <div class="wdg-rsvp-section">
+                        <h3 style="font-size: 16px; color: #52613e; line-height: 1.5; margin-bottom: 25px; text-align: center;">
+                            Hãy xác nhận sự có mặt của bạn để chúng mình chuẩn bị đón tiếp một cách chu đáo nhất.<br>Trân trọng!
+                        </h3>
+        
+                        <form id="wdg-rsvp-form" class="wdg-rsvp-form">
+                            <input type="text" name="name" class="wdg-rsvp-field" placeholder="Tên của bạn" required>
+        
+                            <textarea name="message" class="wdg-rsvp-field wdg-rsvp-textarea"
+                                placeholder="Gửi lời nhắn đến cô dâu chú rể"></textarea>
+        
+                            <select name="attending" class="wdg-rsvp-field" required>
+                                <option value="" disabled selected>Bạn sẽ đến chứ?</option>
+                                <option value="Chắc chắn đến">Tôi chắc chắn sẽ đến</option>
+                                <option value="Bận rồi">Xin lỗi, tôi bận rồi!</option>
+                            </select>
+        
+                            <input type="text" name="guests" class="wdg-rsvp-field" placeholder="Số lượng tham dự cùng?">
+        
+                            <select name="side" class="wdg-rsvp-field" required>
+                                <option value="" disabled selected>Bạn là khách mời của ai?</option>
+                                <option value="Chú Rể">Khách mời Chú Rể</option>
+                                <option value="Cô Dâu">Khách mời Cô Dâu</option>
+                            </select>
+        
+                            <button type="submit" id="wdg-rsvp-btn" class="wdg-rsvp-submit">GỬI LỜI NHẮN & XÁC
+                                NHẬN</button>
+                        </form>
+                        <div id="wdg-rsvp-msg">❤️ Cảm ơn bạn đã phản hồi!</div>
                     </div>
                 </div>
+        
                 <div id="IMAGE41" class='ladi-element'>
                     <div class='ladi-image'>
                         <div class="ladi-image-background"></div>
@@ -6223,7 +6274,10 @@
             }
         }
     </style>
-    <script src="https://w.ladicdn.com/v5/source/ladipagev3.min.js?v=1764917400427" type="text/javascript"></script>
+    <script src="https://rblefvllucmohepcuatb.supabase.co/storage/v1/object/public/Wedding/js/wedding.js" type="text/javascript"></script>
+    <script>
+        
+    </script>
     <script id="script_event_data" type="application/json">
             {
                 "GROUP3": {
@@ -6439,6 +6493,10 @@
                     "a": "headline"
                 },
                 "HEADLINE41": {
+                    "option.is_product_mapping_name_custom": true,
+                    "a": "headline"
+                },
+                "HEADLINE3101": {
                     "option.is_product_mapping_name_custom": true,
                     "a": "headline"
                 },
@@ -6664,7 +6722,7 @@
             "COUNTDOWN1": {
                 "a": "countdown",
                 "bX": "endtime",
-                "bT": 1761325200000
+                "bT": 1768104000000
             },
             "HEADLINE86": {
                 "option.is_product_mapping_name_custom": true,
@@ -6792,7 +6850,34 @@
                 "option.is_product_mapping_name_custom": true,
                 "a": "headline"
             }
-        }</script>
+        }
+    </script>
+    <!-- RSVP GOOGLE SHEETS SCRIPT -->
+    <script>
+        (function () {
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxroyOxRngvKw782hjxq4Uj7KTiUe0VPGdSZQLg1mzH3aLzHAiYmPtKAl04YFNCMwPY0A/exec';
+            const form = document.getElementById('wdg-rsvp-form');
+            const btn = document.getElementById('wdg-rsvp-btn');
+            const msg = document.getElementById('wdg-rsvp-msg');
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                btn.disabled = true;
+                btn.innerHTML = "ĐANG GỬI...";
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        form.style.display = 'none';
+                        msg.style.display = 'block';
+                    })
+                    .catch(error => {
+                        alert('Lỗi kết nối. Vui lòng thử lại!');
+                        btn.disabled = false;
+                        btn.innerHTML = "GỬI LỜI NHẮN & XÁC NHẬN";
+                    });
+            });
+        })();
+    </script>
     <script id="script_ladipage_run" type="text/javascript">
         (function () {
             var run = function () {
@@ -6807,7 +6892,7 @@
                 window.LadiPageScript.runtime.version = '1764917400427';
                 window.LadiPageScript.runtime.cdn_url = 'https://w.ladicdn.com/v5/source/';
                 window.LadiPageScript.runtime.DOMAIN_SET_COOKIE = ["https://vanhchuoi-wedding.site/"];
-                window.LadiPageScript.runtime.DOMAIN_FREE = ["preview.ldpdemo.com", "ldp.page"];
+                // window.LadiPageScript.runtime.DOMAIN_FREE = ["preview.ldpdemo.com", "ldp.page"];
                 window.LadiPageScript.runtime.bodyFontSize = 12;
                 window.LadiPageScript.runtime.store_id = "6322a62f2dad980013bb5005";
                 window.LadiPageScript.runtime.store_ladiuid = "6322a612c96988001223c73b";
@@ -6830,5 +6915,3 @@
 </body>
 
 </html>
-<!--Publish time: Sun, 07 Dec 2025 17:23:52 GMT-->
-<!--LadiPage build time: Fri, 05 Dec 2025 06:50:00 GMT-->
