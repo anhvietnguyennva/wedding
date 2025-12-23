@@ -2018,9 +2018,6 @@
             #IMAGE34,
             #HEADLINE78,
             #GROUP32,
-            #HEADLINE83,
-            #BOX12,
-            #BOX13,
             #HEADLINE84,
             #HEADLINE85,
             #HEADLINE89,
@@ -2285,9 +2282,7 @@
         #HEADLINE78>.ladi-headline:hover,
         #HEADLINE81>.ladi-headline:hover,
         #HEADLINE82>.ladi-headline:hover,
-        #HEADLINE83>.ladi-headline:hover,
-        #BOX12>.ladi-box:hover,
-        #BOX13>.ladi-box:hover,
+
         #IMAGE39:hover>.ladi-image,
         #BOX15>.ladi-box:hover,
         #BOX16>.ladi-box:hover,
@@ -2336,7 +2331,6 @@
         #HEADLINE34.ladi-animation>.ladi-headline,
         #HEADLINE39.ladi-animation>.ladi-headline,
         #HEADLINE78.ladi-animation>.ladi-headline,
-        #HEADLINE83.ladi-animation>.ladi-headline,
         #HEADLINE84.ladi-animation>.ladi-headline,
         #HEADLINE85.ladi-animation>.ladi-headline,
         #HEADLINE89.ladi-animation>.ladi-headline,
@@ -3750,7 +3744,7 @@
         }
 
         #SECTION8 {
-            height: 515.7px;
+            height: 387.7px;
         }
 
         #IMAGE35 {
@@ -3760,8 +3754,7 @@
             left: 0px;
         }
 
-        #HEADLINE78,
-        #HEADLINE83 {
+        #HEADLINE78 {
             width: 314px;
         }
 
@@ -3770,8 +3763,7 @@
             left: 53px;
         }
 
-        #HEADLINE78>.ladi-headline,
-        #HEADLINE83>.ladi-headline {
+        #HEADLINE78>.ladi-headline {
             font-family: QkVZTEUEVSRkVDVElPTiSRUdVTEFSLlRURg;
             font-size: 38.05px;
             line-height: 1.6;
@@ -3859,53 +3851,7 @@
             left: 0px;
         }
 
-        #HEADLINE83 {
-            top: 325.65px;
-            left: 53.0005px;
-        }
 
-        #BOX12,
-        #BOX13 {
-            width: 56.3876px;
-            height: 56.388px;
-        }
-
-        #BOX12 {
-            top: 397.206px;
-            left: 154.906px;
-        }
-
-        #BOX12>.ladi-box,
-        #BOX13>.ladi-box {
-            border-radius: 1000px;
-        }
-
-        #BOX12>.ladi-box {
-            background-color: rgb(230, 219, 200);
-        }
-
-        #BOX12.ladi-animation>.ladi-box {
-            animation-name: fadeInLeft;
-            animation-delay: 0.5s;
-            animation-duration: 1s;
-            animation-iteration-count: 1;
-        }
-
-        #BOX13 {
-            top: 397.206px;
-            left: 222.697px;
-        }
-
-        #BOX13>.ladi-box {
-            background-color: rgb(204, 185, 164);
-        }
-
-        #BOX13.ladi-animation>.ladi-box {
-            animation-name: fadeInLeft;
-            animation-delay: 0.7s;
-            animation-duration: 1s;
-            animation-iteration-count: 1;
-        }
 
         #SECTION9 {
             height: 509.7px;
@@ -4718,7 +4664,7 @@
         .wdg-rsvp-form {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 20px;
         }
     
         .wdg-rsvp-field {
@@ -5677,15 +5623,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="HEADLINE83" class='ladi-element'>
-                    <p class='ladi-headline ladi-transition'>Dresscode</p>
-                </div>
-                <div id="BOX12" class='ladi-element'>
-                    <div class='ladi-box ladi-transition'></div>
-                </div>
-                <div id="BOX13" class='ladi-element'>
-                    <div class='ladi-box ladi-transition'></div>
-                </div>
             </div>
         </div>
         <div id="SECTION9" class='ladi-section'>
@@ -5829,12 +5766,6 @@
                             </select>
         
                             <input type="text" name="guests" class="wdg-rsvp-field" placeholder="Số lượng tham dự cùng?">
-        
-                            <select name="side" class="wdg-rsvp-field" required>
-                                <option value="" disabled selected>Bạn là khách mời của ai?</option>
-                                <option value="Chú Rể">Khách mời Chú Rể</option>
-                                <option value="Cô Dâu">Khách mời Cô Dâu</option>
-                            </select>
         
                             <button type="submit" id="wdg-rsvp-btn" class="wdg-rsvp-submit">GỬI LỜI NHẮN & XÁC
                                 NHẬN</button>
@@ -6675,22 +6606,7 @@
                 "option.is_product_mapping_name_custom": true,
                 "a": "headline"
             },
-            "HEADLINE83": {
-                "option.is_product_mapping_name_custom": true,
-                "a": "headline",
-                "D": "fadeInUp",
-                "A": "0s"
-            },
-            "BOX12": {
-                "a": "box",
-                "D": "fadeInLeft",
-                "A": "0.5s"
-            },
-            "BOX13": {
-                "a": "box",
-                "D": "fadeInLeft",
-                "A": "0.7s"
-            },
+
             "HEADLINE84": {
                 "option.is_product_mapping_name_custom": true,
                 "a": "headline",
@@ -6869,6 +6785,20 @@
                     .then(response => {
                         form.style.display = 'none';
                         msg.style.display = 'block';
+                        
+                        // Reduce the container height to fit just the success message
+                        const container = document.getElementById('GROUP43');
+                        const section = document.getElementById('SECTION11');
+                        // Hide IMAGE41 and IMAGE42 instead of adjusting heights
+                        const image41 = document.getElementById('IMAGE41');
+                        const image42 = document.getElementById('IMAGE42');
+                        
+                        if (container && section) {
+                            container.style.height = '100px';
+                            section.style.height = '200px';
+                            if (image41) image41.style.display = 'none';
+                            if (image42) image42.style.display = 'none';
+                        }
                     })
                     .catch(error => {
                         alert('Lỗi kết nối. Vui lòng thử lại!');
